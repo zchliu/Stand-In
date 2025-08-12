@@ -90,7 +90,7 @@
 ### 1. Environment Setup
 ```bash
 # Clone the project repository
-git clone https://github.com/KBRASK/Stand-In.git
+git clone https://github.com/WeChatCV/Stand-In.git
 cd Stand-In
 
 # Create and activate Conda environment
