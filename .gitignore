@@ -1,0 +1,7 @@
+__pycache__/
+*.safetensors
+*.bin
+*.mp4
+checkpoints/
+*.onnx
+*.json
