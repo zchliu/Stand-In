@@ -22,7 +22,7 @@
 ---
 
 ## 🔥 News
-* **[2025.08.09]** Released Stand-In v1.0 (153M), the Wan2.1-14B-T2V–adapted weights and inference code are now open-sourced.
+* **[2025.08.09]** Released Stand-In v1.0 (153M parameters), the Wan2.1-14B-T2V–adapted weights and inference code are now open-sourced.
 
 ---
 
