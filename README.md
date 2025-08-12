@@ -169,10 +169,10 @@ If you find our work helpful for your research, please consider citing our paper
 
 ```bibtex
 @article{xue2025standin,
-    title={Stand-In: A Lightweight and Plug-and-Play Identity Control for Video Generation}, 
-    author={Xue, Bowen and Yan, Qixin and Wang, Wenjing and Liu, Hao and Li, Chen},
-    journal={arXiv preprint arXiv:2508.xxxxx},
-    year={2025},
+      title={Stand-In: A Lightweight and Plug-and-Play Identity Control for Video Generation}, 
+      author={Bowen Xue and Qixin Yan and Wenjing Wang and Hao Liu and Chen Li},
+      journal={arXiv preprint arXiv:2508.07901},
+      year={2025},
 }
 ```
 
