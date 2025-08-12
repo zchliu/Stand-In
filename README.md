@@ -125,12 +125,15 @@ This script will download the following models:
 
 Use the `infer.py` script for standard identity-preserving text-to-video generation.
 
+
 ```bash
 python infer.py \
     --prompt "A man sits comfortably at a desk, facing the camera as if talking to a friend or family member on the screen. His gaze is focused and gentle, with a natural smile. The background is his carefully decorated personal space, with photos and a world map on the wall, conveying a sense of intimate and modern communication." \
     --ip_image "test/input/lecun.jpg" \
     --output "test/output/lecun.mp4"
 ```
+**Prompt Writing Tip:** If you do not wish to alter the subject's facial features, simply use *"a man"* or *"a woman"* without adding extra descriptions of their appearance. Prompts support both Chinese and English input.
+
 
 ### Inference with Community LoRA
 
