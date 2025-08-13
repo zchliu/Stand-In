@@ -22,7 +22,13 @@
 ---
 
 ## 🔥 News
-* **[2025.08.09]** Released Stand-In v1.0 (153M parameters), the Wan2.1-14B-T2V–adapted weights and inference code are now open-sourced.
+* **[2025.08.13]** Special thanks to @kijai for integrating Stand-In into the custom ComfyUI node **WanVideoWrapper**. However, the implementation differs from the official version, which may affect Stand-In’s performance.  
+   In order to address part of the issue, we have urgently released the official Stand-In preprocessing ComfyUI node:  
+  👉 https://github.com/WeChatCV/Stand-In_Preprocessor_ComfyUI  
+  If you wish to experience Stand-In within ComfyUI, please use **our official preprocessing node** to replace the one implemented by kijai.  
+  For the best results, we recommend waiting for the release of our full **official Stand-In ComfyUI**.
+
+* **[2025.08.12]** Released Stand-In v1.0 (153M parameters), the Wan2.1-14B-T2V–adapted weights and inference code are now open-sourced.
 
 ---
 
