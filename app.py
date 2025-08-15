@@ -7,14 +7,14 @@ import os
 
 from data.video import save_video
 from wan_loader import load_wan_pipe
-from models.set_condition_branch import set_lora
+from models.set_condition_branch import set_stand_in
 from preprocessor import FaceProcessor
 
 print("Loading model, please wait...")
 try:
     ANTELOPEV2_PATH = "checkpoints/antelopev2"
     BASE_MODEL_PATH = "checkpoints/base_model/"
-    LORA_MODEL_PATH = "checkpoints/Stand-In/Stand-In_wan2.1_ver1.0.ckpt"
+    LORA_MODEL_PATH = "checkpoints/Stand-In/Stand-In_wan2.1_T2V_14B_ver1.0.ckpt"
 
     if not os.path.exists(ANTELOPEV2_PATH):
         raise FileNotFoundError(
@@ -27,7 +27,7 @@ try:
 
     face_processor = FaceProcessor(antelopv2_path=ANTELOPEV2_PATH)
     pipe = load_wan_pipe(base_path=BASE_MODEL_PATH, torch_dtype=torch.bfloat16)
-    set_lora(pipe, model_path=LORA_MODEL_PATH)
+    set_stand_in(pipe, model_path=LORA_MODEL_PATH)
     print("Model loaded successfully!")
 except Exception as e:
     print(f"Model loading failed: {e}")
