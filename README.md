@@ -22,6 +22,8 @@
 ---
 
 ## 🔥 News
+* **[2025.08.16]** We have updated the experimental version of the face swapping feature. Feel free to try it out!
+
 * **[2025.08.13]** Special thanks to @kijai for integrating Stand-In into the custom ComfyUI node **WanVideoWrapper**. However, the implementation differs from the official version, which may affect Stand-In’s performance.  
    In order to address part of the issue, we have urgently released the official Stand-In preprocessing ComfyUI node:  
   👉 https://github.com/WeChatCV/Stand-In_Preprocessor_ComfyUI  
