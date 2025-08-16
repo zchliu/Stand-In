@@ -205,9 +205,9 @@ def closest_name(input_str, options):
     closest_match = difflib.get_close_matches(
         input_str, list(options.keys()), n=1, cutoff=0.5
     )
-    assert (
-        isinstance(closest_match, list) and len(closest_match) > 0
-    ), f"The value [{input_str}] is not valid!"
+    assert isinstance(closest_match, list) and len(closest_match) > 0, (
+        f"The value [{input_str}] is not valid!"
+    )
     result = closest_match[0]
 
     if result != input_str:
@@ -222,9 +222,9 @@ class Canvas:
         matched = re.search(r"```python\n(.*?)\n```", response, re.DOTALL)
         assert matched, "Response does not contain codes!"
         code_content = matched.group(1)
-        assert (
-            "canvas = Canvas()" in code_content
-        ), "Code block must include valid canvas var!"
+        assert "canvas = Canvas()" in code_content, (
+            "Code block must include valid canvas var!"
+        )
         local_vars = {"Canvas": Canvas}
         exec(code_content, {}, local_vars)
         canvas = local_vars.get("canvas", None)
@@ -288,13 +288,13 @@ class Canvas:
             isinstance(item, str) for item in detailed_descriptions
         ), f"The detailed_descriptions for [{description}] is not valid!"
         assert isinstance(tags, str), f"The tags for [{description}] is not valid!"
-        assert isinstance(
-            atmosphere, str
-        ), f"The atmosphere for [{description}] is not valid!"
+        assert isinstance(atmosphere, str), (
+            f"The atmosphere for [{description}] is not valid!"
+        )
         assert isinstance(style, str), f"The style for [{description}] is not valid!"
-        assert isinstance(
-            quality_meta, str
-        ), f"The quality_meta for [{description}] is not valid!"
+        assert isinstance(quality_meta, str), (
+            f"The quality_meta for [{description}] is not valid!"
+        )
 
         location = closest_name(location, valid_locations)
         offset = closest_name(offset, valid_offsets)

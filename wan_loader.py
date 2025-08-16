@@ -1,9 +1,12 @@
 import os
 import torch
 from pipelines.wan_video import WanVideoPipeline, ModelConfig
+from pipelines.wan_video_face_swap import WanVideoPipeline_FaceSwap
 
 
-def load_wan_pipe(base_path, torch_dtype=torch.bfloat16, device="cuda"):
+def load_wan_pipe(
+    base_path, torch_dtype=torch.bfloat16, face_swap=False, device="cuda"
+):
     diffusion_model_files = [
         f"diffusion_pytorch_model-0000{i}-of-00006.safetensors" for i in range(1, 7)
     ]
@@ -11,7 +14,9 @@ def load_wan_pipe(base_path, torch_dtype=torch.bfloat16, device="cuda"):
         os.path.join(base_path, fname) for fname in diffusion_model_files
     ]
 
-    pipe = WanVideoPipeline.from_pretrained(
+    pipe_cls = WanVideoPipeline_FaceSwap if face_swap else WanVideoPipeline
+
+    pipe = pipe_cls.from_pretrained(
         torch_dtype=torch_dtype,
         device=device,
         model_configs=[
