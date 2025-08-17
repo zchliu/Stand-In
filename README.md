@@ -213,4 +213,4 @@ If you have any questions or suggestions, feel free to reach out via [GitHub Iss
 
 ## 🌟 Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=WeChatCV/Stand-In&type=Date)](https://www.star-history.com/#WeChatCV/Stand-In&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=WeChatCV/Stand-In&type=Timeline)](https://www.star-history.com/#WeChatCV/Stand-In&Timeline)
