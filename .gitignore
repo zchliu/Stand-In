@@ -1,8 +1,8 @@
 __pycache__/
 *.safetensors
 *.bin
-*.mp4
 checkpoints/
+test/ouput
 *.onnx
 *.json
 .gradio

@@ -22,6 +22,8 @@
 ---
 
 ## 🔥 News
+* **[2025.08.16]** We have updated the experimental version of the face swapping feature. Feel free to try it out!
+
 * **[2025.08.13]** Special thanks to @kijai for integrating Stand-In into the custom ComfyUI node **WanVideoWrapper**. However, the implementation differs from the official version, which may affect Stand-In’s performance.  
    In order to address part of the issue, we have urgently released the official Stand-In preprocessing ComfyUI node:  
   👉 https://github.com/WeChatCV/Stand-In_Preprocessor_ComfyUI  
@@ -142,6 +144,8 @@ python infer.py \
 
 **Input Image Recommendation:** For best results, use a high-resolution frontal face image. There are no restrictions on resolution or file extension, as our built-in preprocessing pipeline will handle them automatically.
 
+---
+
 ### Inference with Community LoRA
 
 Use the `infer_with_lora.py` script to load one or more community LoRA models alongside Stand-In.
@@ -158,6 +162,24 @@ python infer_with_lora.py \
 We recommend using this stylization LoRA: [https://civitai.com/models/1404755/studio-ghibli-wan21-t2v-14b](https://civitai.com/models/1404755/studio-ghibli-wan21-t2v-14b)
 
 ---
+
+### Video Face Swapping
+
+Use the `infer_face_swap.py` script to perform video face swapping with Stand-In.
+
+```bash
+python infer_face_swap.py \
+    --prompt "The video features a woman standing in front of a large screen displaying the words ""Tech Minute"" and the logo for CNET. She is wearing a purple top and appears to be presenting or speaking about technology-related topics. The background includes a cityscape with tall buildings, suggesting an urban setting. The woman seems to be engaged in a discussion or providing information on technology news or trends. The overall atmosphere is professional and informative, likely aimed at educating viewers about the latest developments in the tech industry." \
+    --ip_image "test/input/ruonan.jpg" \
+    --output "test/output/ruonan.mp4" \
+    --denoising_strength 0.85
+```
+
+**Note**: Since Wan2.1 itself does not have an inpainting function, our face swapping feature is still experimental.
+
+The higher the denoising_strength, the more the background area is redrawn, and the more natural the face area becomes. Conversely, the lower the denoising_strength, the less the background area is redrawn, and the higher the degree of overfitting in the face area.
+
+You can set --force_background_consistency to make the background completely consistent, but this may lead to potential and noticeable contour issues. Enabling this feature requires experimenting with different denoising_strength values to achieve the most natural effect. If slight changes to the background are not a concern, please do not enable this feature.
 
 ## 🤝 Acknowledgements
 
@@ -187,3 +209,8 @@ If you find our work helpful for your research, please consider citing our paper
 ## 📬 Contact Us
 
 If you have any questions or suggestions, feel free to reach out via [GitHub Issues](https://github.com/WeChatCV/Stand-In/issues) . We look forward to your feedback!
+
+
+## 🌟 Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=WeChatCV/Stand-In&type=Timeline)](https://www.star-history.com/#WeChatCV/Stand-In&Timeline)
