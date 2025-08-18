@@ -1,3 +1,6 @@
+import os
+os.environ["CUDA_VISIBLE_DEVICES"] = "4"
+
 import torch
 from data.video import save_video
 from wan_loader import load_wan_pipe

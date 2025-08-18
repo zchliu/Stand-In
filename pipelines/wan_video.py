@@ -43,7 +43,9 @@ class WanVideoPipeline(BasePipeline):
             time_division_factor=4,
             time_division_remainder=1,
         )
+        # 定义了训练/推理的参数和 step 函数
         self.scheduler = FlowMatchScheduler(shift=5, sigma_min=0.0, extra_one_step=True)
+        # 定义了
         self.prompter = WanPrompter(tokenizer_path=tokenizer_path)
         self.text_encoder: WanTextEncoder = None
         self.image_encoder: WanImageEncoder = None

@@ -100,6 +100,7 @@ class FaceProcessor:
         frame = cv2.cvtColor(np.array(image), cv2.COLOR_RGB2BGR)
 
         faces = self.app.get(frame)
+
         h, w, _ = frame.shape
         image_to_process = None
 
@@ -142,6 +143,8 @@ class FaceProcessor:
         image_resized = cv2.resize(
             image_to_process, (resize_to, resize_to), interpolation=cv2.INTER_AREA
         )
+        
+        # cv2.imwrite("/workspace/Stand-In/test/output/processed_face.jpg", image_resized)  # Save as JPG
 
         face_tensor = (
             _img2tensor(image_resized, bgr2rgb=True).unsqueeze(0).to(self.device)
@@ -158,4 +161,7 @@ class FaceProcessor:
         result_img_bgr = np.where(mask_3channel == 255, white_background, image_resized)
 
         result_img_rgb = cv2.cvtColor(result_img_bgr, cv2.COLOR_BGR2RGB)
+        
+        # cv2.imwrite("/workspace/Stand-In/test/output/processed_face2.jpg", result_img_bgr)  # Save as JPG
+
         return PIL.Image.fromarray(result_img_rgb)
